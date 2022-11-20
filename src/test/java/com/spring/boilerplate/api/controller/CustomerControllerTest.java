@@ -44,8 +44,8 @@ public class CustomerControllerTest {
 
     @Test
     public void should_get_Customer_ById() throws Exception {
-        String target = "/api/v1/customers";
-        resource.perform(get(target).param("customerId", "1")).andDo(print()).
+        String target = "/api/v1/customers/1";
+        resource.perform(get(target)).andDo(print()).
                 andExpect(status().is2xxSuccessful()).andDo(print()).andReturn();
     }
 
