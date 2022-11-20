@@ -53,7 +53,7 @@ public class CustomerControllerTest {
     public void should_Insert_Customer() throws Exception {
         String target = "/api/v1/customers";
 
-        resource.perform(put(target)
+        resource.perform(post(target)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestDataHelper.MAPPER.writeValueAsString(TestDataHelper.getCustomer1())))
                 .andExpect(status().is2xxSuccessful())
